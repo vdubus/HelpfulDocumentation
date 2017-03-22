@@ -1,2 +1,3 @@
 # HelpfullDocumentation
-Helpfull documentation about some stuff
+
+Helpfull documentation about development mostly.
