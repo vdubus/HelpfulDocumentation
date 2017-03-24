@@ -7,4 +7,4 @@ This repository should be accessible from all users on the computer in the case 
 
 Example: `C:\development`
 
-That's only if you don't need this to be secured and only accessible for you only. But for such a critical project, the best would be to create a virtual secured disk to be mount only when working on it. To do so, I would sugest to us [VeraCrypt](https://veracrypt.codeplex.com/).
+That's only if you don't need this to be secured and only accessible for you only. But for such a critical project, the best would be to create a virtual secured disk to be mount only when working on it. To do so, I would sugest to use [VeraCrypt](https://veracrypt.codeplex.com/).
