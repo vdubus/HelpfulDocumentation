@@ -7,3 +7,6 @@
   * [Git](tools/git.md)
   * [IDE](tools/ide.md)
   * [Maven](tools/maven.md)
+* [Commands](commands/README.md)
+  * [For Docker](commands/docker.md)
+  * [For Windows](commands/windows.md)

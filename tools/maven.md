@@ -9,7 +9,7 @@ Then, create a `M2_HOME` environment variable pointing to this maven base folder
 Example:
 
 ```
-M2_HOME=C:\DEV\Applications\apache-maven
+M2_HOME=C:\development\applications\apache-maven-3
 ```
 
 ## Configuration
