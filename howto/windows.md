@@ -50,3 +50,9 @@ In a console:
 ```cmd
 explorer.exe
 ```
+
+## Start, Stop and Restart a windows service
+
+Windows give you a tool to manage services, which is named: **services**.
+
+This tool display all available windows services, and allow you to: start, stop or restart them.
