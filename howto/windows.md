@@ -1,19 +1,32 @@
 # Howto Windows
 
-## Stop windows from auto-restarting
+## Stop windows 7 from auto-restarting
 
 Just follow this [guide](https://www.groovypost.com/howto/microsoft/stop-windows-7-from-auto-restarting-after-update/).
 
 Here a quick guide based on it:
 
 1. Open `regedit.exe`
-2. Go in `HKEY_LOCAL_MACHINE > SOFTWARE > Policies> Microsoft > Windows`.
-3. Add a **key** named `WindowsUpdate` and go there.
+2. Go in `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows`
+3. Add a **key** named `WindowsUpdate` and go there
 4. Add a **key** named `AU` and go there
 5. Add a **DWORD (32-bit) Value** named `NoAutoRebootWithLoggedOnUsers`
 6. Select the **Modify...** command on it and input a **Value data** of `1`
 
 This work for Windows 7, and should also work for some other versions.
+
+## How to prevent windows 10 from auto-downloading updates
+
+You can follow this [guide](https://www.howtogeek.com/262477/how-to-set-an-ethernet-connection-as-metered-in-windows-8-and-10/) for ethernet connection.
+
+This other [guide](https://www.howtogeek.com/224471/how-to-prevent-windows-10-from-automatically-downloading-updates/) tell you how to do so for all other kind of connection.
+
+As for the quick guide for an ethernet connection:
+
+1. Open `regedit.exe`
+2. Go in `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\DefaultMediaCost`
+3. [Take ownership](https://www.howtogeek.com/262464/how-to-gain-full-permissions-to-edit-protected-registry-keys/) of the key `DefaultMediaCost`
+4. Select the **Modify...** command on the key named `Ethernet` and set the **Value data** to `2`
 
 ## Open a console
 
