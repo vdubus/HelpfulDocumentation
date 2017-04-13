@@ -1,4 +1,4 @@
-# Docker
+# Howto Docker
 
 ## Connect to a running container
 
