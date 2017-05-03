@@ -33,3 +33,7 @@ Go to `Edit > Parameters > Tabs`, then add a new tab and:
 
 With for example:
 * `${CygWin_Base_Folder}` = `C:\DEV\Applications\cygwin64`
+
+## [ConEmu](https://conemu.github.io/)
+
+Another tool allowing us to manage consoles in tabs.
