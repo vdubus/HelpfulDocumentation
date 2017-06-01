@@ -2,11 +2,19 @@
 
 ## [Atom](https://atom.io/)
 
+A nice text editor with lot of functionalities and package that you can install to match your needs. A very good free alternative to [SublimeText](https://www.sublimetext.com/).
+
+### Recommanded [packages](https://atom.io/packages)
+
+-   [atom-beautify](https://atom.io/packages/atom-beautify) - To format your source code for lot of languages.
+-   [file-icons](https://atom.io/packages/file-icons) - To add more relevant icons to files.
+-   [minimap](https://atom.io/packages/minimap) - To display a preview of the full source code, just like [SublimeText](https://www.sublimetext.com/).
+
 ## [Eclipse](https://www.eclipse.org/)
 
 ### Alternatives
 
-* [Spring Tool Suite](https://spring.io/tools/sts) - A modified version to [Eclipse]() to develop Spring based applications.
+-   [Spring Tool Suite](https://spring.io/tools/sts) - A modified version of [Eclipse](https://www.eclipse.org/) to develop Spring based applications.
 
 ### Configuration
 
