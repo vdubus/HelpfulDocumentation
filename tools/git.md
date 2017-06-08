@@ -57,7 +57,14 @@ It is possible to [associating text editors](https://help.github.com/articles/as
 
 ### GPG
 
-It is possible to sign you commit with a GPG key. Check the
+#### Why
+
+It is possible to sign you commit with a GPG key.  
+I would suggest you to read the [Git horro story](https://mikegerwitz.com/papers/git-horror-story) first so that you know why you should sign your commits.
+
+#### configuration
+
+Check the
 [GPG documentation from GitHub](https://help.github.com/articles/signing-commits-with-gpg/) for more information on how to enable this.
 
 Here the list of global information which interract with the GPG functionality:
