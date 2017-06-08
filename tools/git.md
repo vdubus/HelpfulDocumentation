@@ -80,13 +80,21 @@ On windows, I would recommand you to define the full path to the gpg executable 
 
 Example:
 
-```bash
+```shell
 git config --global --add gpg.program "C:\Program Files (x86)\GNU\GnuPG\gpg2.exe"
 ```
 
 You can also configure a different GPG key per project by overriding `user.email` and `user.signingkey` on the **local** git configuration.
 
-```bash
+```shell
 git config --local --add user.email <YourOtherEMailAddress>
 git config --local --add user.signingkey <YourOtherGPGKey>
 ```
+
+## More Information
+
+### Prefer `git rebase` over `git merge`
+
+-   [We use ‘git rebase’ and so should you](https://medium.com/@sellarafaeli/we-use-git-rebase-and-so-should-you-be89d1932a14)
+-   [Getting solid at Git rebase vs. merge](https://delicious-insights.com/en/posts/getting-solid-at-git-rebase-vs-merge/)
+-   [Git rebase -i belong to us](https://medium.com/@sellarafaeli/git-rebase-i-belong-to-us-4d7010387683)
