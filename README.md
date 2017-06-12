@@ -2,7 +2,7 @@
 
 ## Presentation
 
-Helpful documentation about development mostly.\\
+Helpful documentation about development mostly.  
 The objectif is to keep track of tips, astuces, tools and other stuffs I don't want to forget when managing my development environment or my computer.
 
 This documentation is available on [GitBook](https://vdubus.gitbooks.io/helpful-documentation/).
@@ -22,5 +22,5 @@ I would recommand to use [Atom.io](https://atom.io/) to write in [markdown](http
 ### How to contribute
 
 -   Complete/fix the existing content.
--   [Translate](https://toolchain.gitbook.com/languages.html) the documentation in your language.
+-   [Translate](https://toolchain.gitbook.com/languages.html) the documentation in your own language.
 -   Suggest/propose new content.
