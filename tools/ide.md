@@ -11,7 +11,7 @@ Here a list of some of them which should, I think, be installed by default.
 
 -   [atom-beautify](https://atom.io/packages/atom-beautify) - To format your source code for lot of languages.
 -   [file-icons](https://atom.io/packages/file-icons) - To add more relevant icons to files.
--   [minimap](https://atom.io/packages/minimap) - To display a preview of the full source code, just like [SublimeText](https://www.sublimetext.com/).
+-   [minimap](https://atom.io/packages/minimap) - To display a preview of the full source code, just like **SublimeText**.
 
 ## [Eclipse](https://www.eclipse.org/)
 
