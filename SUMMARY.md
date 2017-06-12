@@ -10,4 +10,5 @@
   * [Other tools](tools/others.md)
 * [HowTo](howto/README.md)
   * [Windows](howto/windows.md)
+  * [Linux](howto/linux.md)
   * [Docker](howto/docker.md)
