@@ -12,3 +12,4 @@
     -   [Windows](howto/windows.md)
     -   [Linux](howto/linux.md)
     -   [Docker](howto/docker.md)
+    -   [FreeNAS](howto/freenas.md)
