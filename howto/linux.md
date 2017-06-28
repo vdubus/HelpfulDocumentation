@@ -11,7 +11,7 @@ Add a `env.sh` file into `/etc/profile.d/` folder to add environment variable fo
 
 Sample content:
 
-```shell
+```bash
 export JAVA_HOME={pathToJava}
 ```
 
@@ -19,7 +19,7 @@ export JAVA_HOME={pathToJava}
 
 ### Encoding
 
-```shell
+```bash
 # To ensure that you launch script as UTF-8:
 export NLS_LANG=.AL32UTF8
 ```
@@ -28,7 +28,7 @@ export NLS_LANG=.AL32UTF8
 
 Install and use [rlwrap ](https://github.com/hanslub42/rlwrap) to define an alias to sqlplus.
 
-```shell
+```bash
 alias sqlplus="rlwrap sqlplus"
 ```
 
@@ -38,7 +38,7 @@ See following [guide](https://blogs.oracle.com/middleware/entry/getting_history_
 
 ### SCP
 
-```shell
+```bash
 # To copy some file over ssh between machine.
 scp -r [<user>@<machine>:]<filesToCopy> [<user>@<machine>:]<pathToFolder>
 scp -r user@server01:/tmp/somefile user@server02:/tmp/
@@ -46,7 +46,7 @@ scp -r user@server01:/tmp/somefile user@server02:/tmp/
 
 ### PWD
 
-```shell
+```bash
 # To know the current folder full path.
 pwd
 ```
@@ -55,7 +55,7 @@ pwd
 
 #### Some commands
 
-```shell
+```bash
 # To connect with SSH to an user on a server from local computer.
 ssh <user>@<serverAddress>
 
@@ -72,7 +72,7 @@ Here, the `-f -N` parameters allow us to open the SSH tunnel without having the 
 
 #### Use a RSA key to connect
 
-```shell
+```bash
 # To generate a RSA key pairs. Not inputting any password on the key creation will allow us to connect to the server without inputting any password.
 ssh-keygen -t rsa
 
@@ -89,7 +89,7 @@ cat temp/id_rsa.pub >> .ssh/authorized_keys
 
 ### Find + Grep to check multiple files
 
-```shell
+```bash
 find ./ -name connector.properties | while read file; do echo $file; grep "ASpecificValue" $file; done
 ```
 
@@ -97,7 +97,7 @@ find ./ -name connector.properties | while read file; do echo $file; grep "ASpec
 
 ### iptable
 
-```shell
+```bash
 # To allow access to a port:
 iptables -I INPUT -p tcp --dport 1525 -j ACCEPT
 ```
@@ -110,7 +110,7 @@ Best to use firewalld as it is configured as a service. It is also fully dynamic
 
 ## Services
 
-```shell
+```bash
 # To start and stop services.
 systemctl <start|stop|...> <serviceName>
 ```
