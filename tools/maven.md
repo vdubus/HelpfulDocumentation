@@ -8,4 +8,95 @@ Then, create a `M2_HOME` environment variable pointing to this maven base folder
 
 Example: `M2_HOME=C:\development\applications\apache-maven-3`
 
+**TIP: Keep in mind that *maven* need the `JAVA_HOME` environment variable to work.**
+
 ## Configuration
+
+In the case where you want to configure a specific maven repository, here is an example.
+
+### Global settings
+
+```xml
+<settings [...]>
+  [...]
+  <localRepository>C:\development\tmp\mvn_repository</localRepository><!--1-->
+  [...]
+  <mirrors>
+    [...]
+    <mirror>
+      <id>nexus</id>
+      <mirrorOf>*</mirrorOf>
+      <url>http://${nexus_host}/content/groups/public</url><!--2-->
+    </mirror>
+  </mirrors>
+  [...]
+  <profiles>
+    [...]
+    <profile>
+      <id>nexus</id>
+      <repositories>
+        <repository>
+          <id>central</id>
+          <url>http://central</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>central</id>
+          <url>http://central</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+  [...]
+  <activeProfiles>
+    <activeProfile>nexus</activeProfile>
+  </activeProfiles>
+  [...]
+</settings>
+```
+**<1>** Specify a directory accessible by everyone to avoid downloading multiple time the same dependencies.  
+**<2>** Configure a mirror to the default maven central web site.
+
+### User settings
+
+In `C:\Users\${username}\.m2`, create the following files `settings-security.xml`:
+
+```xml
+<settingsSecurity>
+  <master>${encrypted_master_password}</master> <!--1-->
+</settingsSecurity>
+```
+
+**<1>** `${encrypted_master_password}` your maven master passwordencrypted with the command: `mvn --encrypt-master-password`
+
+**TIP: Keep this master password safe.**
+
+```xml
+<settings>
+  <servers>
+    <server>
+      <id>nexus</id>
+      <username>${username}</username><!--1-->
+      <password>${encrypted_password}</password><!--2-->
+    </server>
+  </servers>
+</settings>
+```
+
+**<1>** `${username}` your nexus login  
+**<2>** `${encrypted_password}` your nexus password encrypted with the command: `mvn --encrypt-password`
+
+More information on [Maven password encryption](https://maven.apache.org/guides/mini/guide-encryption.html) website.
