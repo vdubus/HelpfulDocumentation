@@ -14,3 +14,5 @@
     -   [Docker](howto/docker.md)
     -   [FreeNAS](howto/freenas.md)
     -   [Miscellaneous](howto/miscellaneous.md)
+-   [Others](others/README.md)
+    -   [Keymapping](others/keymapping.md)
