@@ -1,8 +1,21 @@
 # Miscellaneous
 
+## NPM
+
+### Proxy management
+
+```
+npm config set proxy http://proxy.company.com:8080
+npm config set https-proxy http://proxy.company.com:8080
+```
+
+This will generate or complete the file `.npmrc` in your user base directory.
+
 ## Bower
 
 ### Proxy management
+
+In the file `.bowerrc` (in your user base directory), add the following:
 
 ```json
 {
