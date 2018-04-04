@@ -53,7 +53,14 @@ You won't need to install **Git**.
 
 It is possible to [associating text editors](https://help.github.com/articles/associating-text-editors-with-git/) like **Atom** or **Notepad++** with **Git**, so they can be used to edit commits.
 
-In the case of **Atom**, et seems that the documentation isn't up to date anymore, and the real command to use on windows is:
+#### Atom
+
+In the case of **Atom**, it seems that the documentation isn't up to date anymore, and the real command to use on windows is:
+
+```
+git config --global core.editor "'C:\Users\USERNAME\AppData\Local\atom\bin\atom.cmd' --new-window --wait"
+```
+
 
 ```
 git config --global core.editor "'C:/Users/USERNAME/AppData/Local/atom/bin/atom.cmd' --new-window --wait"
