@@ -61,9 +61,10 @@ In the case of **Atom**, it seems that the documentation isn't up to date anymor
 git config --global core.editor "'C:\Users\USERNAME\AppData\Local\atom\bin\atom.cmd' --new-window --wait"
 ```
 
+#### VSCode
 
 ```
-git config --global core.editor "'C:/Users/USERNAME/AppData/Local/atom/bin/atom.cmd' --new-window --wait"
+git config --global core.editor "'C:\development\applications\Microsoft VS Code\Code.exe' --wait --new-window"
 ```
 
 ### GPG
