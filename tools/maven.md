@@ -72,6 +72,23 @@ In the case where you want to configure a specific maven repository, here is an 
 
 ### User settings
 
+#### Specific settings
+
+In `C:\Users\${username}\.m2`, create the following files `settings.xml`:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          <localRepository>${pathToUserMVNRepo}</localRepository> <!--1-->
+</settings>
+```
+
+**<1>** `${pathToUserMVNRepo}` a path to a folder if it should be different from the default `C:\Users\${username}\.m2`.
+
+#### Security
+
 In `C:\Users\${username}\.m2`, create the following files `settings-security.xml`:
 
 ```xml
