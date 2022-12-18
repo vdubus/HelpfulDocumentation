@@ -1,0 +1,12 @@
+= Update user and group
+
+----
+pw user show {userName} 
+pw user mod {userName} -u {newUserID} <1>
+pw group show {groupName}
+pw group mod {groupName} -g {newGroupID} <2>
+chown -R {userName}:{groupName} /usr/local/{userName} <3>
+----
+<1> Example 816 for user media
+<2> Example 816 for group media
+<3> Update the user and group owner of all directory of the modified user and group.

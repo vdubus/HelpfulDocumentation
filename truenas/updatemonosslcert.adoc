@@ -1,0 +1,27 @@
+= Update SSL cacert validation
+
+== Useful links
+
+* https://www.truenas.com/community/threads/how-to-fix-sonarr-mono-certificate-errors-unable-to-communicate-with-skyhook.100592/[\[How To\] FIX - Sonarr/Mono Certificate Errors]
+
+== Actions to do
+
+[source,shell]
+----
+# Connect to your Sonarr Jail VIA SSH or VIA the TrueNAS Console
+# iocage console <pluginname>
+iocage console sonarr
+
+# Install WGET
+pkg install wget
+
+# Download the latest available root certficates, use cert-sync to synchronize them
+wget -O - https://curl.haxx.se/ca/cacert.pem | cert-sync --user /dev/stdin
+
+# Run these commands from the TrueNAS Shell or SSH Console outside of your Jail
+exit
+# Copy the CERTs from your Jail to the FreeBSD Jail Package
+# Make sure you change <StoragePoolName> to your storage pools name.
+# cp -R /mnt/<StoragePoolName>/iocage/jails/sonarr/root/root/.config/.mono/ /mnt/<StoragePoolName>/iocage/releases/<LatestRelease>/root/usr/share/.mono
+cp -R /mnt/Main/iocage/jails/sonarr/root/root/.config/.mono/ /mnt/Main/iocage/releases/12.2-RELEASE/root/usr/share/.mono 
+----

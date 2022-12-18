@@ -1,0 +1,124 @@
+= How to install OpenVPN on a TrueNAS's jail
+
+== Useful links
+
+* https://www.digimoot.com/truenas-add-vpn-connection-to-a-jail/[Reference guide]
+* https://nordvpn.com/fr/servers/tools/[Tool to find the best NordVPN configuration]
+* https://nordvpn.com/fr/ovpn/[OpenVPN confiuration for NordVPN]
+* https://wtfismyip.com/[Test your IP]
+
+== Steps
+
+=== Configure the jail
+
+Entre the Jail terminal, then install `nano` and `wget`.
+
+[source]
+----
+pkg install nano wget
+----
+
+Check the content of the file `/etc/pkg/FreeBSD.conf`
+
+[source]
+----
+nano /etc/pkg/FreeBSD.conf
+----
+
+And replace the `quarterly` by `latest` to check the lastest versions of packages.
+
+.quarterly
+[source]
+----
+url: "pkg+http://pkg.FreeBSD.org/$(ABI)/quarterly",
+----
+
+.lastest
+[source]
+----
+url: "pkg+http://pkg.FreeBSD.org/$(ABI)/latest",
+----
+
+Install OpenVPN
+
+[source]
+----
+pkg install openvpn
+----
+
+Prepare the OpenVPN configuration
+
+[source]
+----
+mkdir /usr/local/etc/openvpn
+mkdir /usr/local/etc/openvpn/download
+----
+
+[source]
+----
+nano /usr/local/etc/openvpn/auth.txt
+----
+
+Write the content in this order:
+
+1. First line is the username
+2. Second line is the password
+
+or use the following command:
+
+[source]
+----
+echo [username] > /usr/local/etc/openvpn/auth.txt
+echo [password] >> /usr/local/etc/openvpn/auth.txt
+----
+
+[source]
+----
+chmod 0600 /usr/local/etc/openvpn/auth.txt
+cd /usr/local/etc/openvpn/download
+wget https://downloads.nordcdn.com/configs/files/ovpn_legacy/servers/xxxx.nordvpn.com.yyyyy.ovpn <1>
+cp xxxx.nordvpn.com.yyyyy.ovpn /usr/local/etc/openvpn/openvpn.conf
+----
+<1> Find the best suited configuration using the tools defined above.
+
+Then edit the configuration with `nano` to define where to find the authentification configuration.
+
+[source]
+----
+auth-user-pass /usr/local/etc/openvpn/auth.txt <1>
+auth-nocache <2>
+----
+<1> `auth-user-pass` is most likely already defined and just need to be completed
+<2> To be added most likely
+
+[source]
+----
+sysrc openvpn_enable="YES" <1>
+sysrc openvpn_if="tun" <2>
+----
+<1> to enable openvpn
+<2> to enable tunneling
+
+=== Configure the tunneling
+
+Open a console to TrueNAS then enter the following.
+
+[source]
+----
+iocage set allow_tun=1 [jailname]
+----
+
+=== Finishing touch
+
+Restart the server.
+
+Once restarted, test in the jail's terminal the IP.
+
+----
+wget -qO - http://wtfismyip.com/text <1>
+----
+<1> the Result should be differente from your current IP.
+
+== Add a kill switch?
+
+https://github.com/danjacques/freenasdocs/blob/master/guides/vpn-client-jail.md[Check this guide?]
