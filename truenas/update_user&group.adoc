@@ -1,5 +1,6 @@
 = Update user and group
 
+[source,shell]
 ----
 pw user show {userName} 
 pw user mod {userName} -u {newUserID} <1>
@@ -10,3 +11,61 @@ chown -R {userName}:{groupName} /usr/local/{userName} <3>
 <1> Example 816 for user media
 <2> Example 816 for group media
 <3> Update the user and group owner of all directory of the modified user and group.
+
+== Update user & group for Deluge
+
+[source,shell]
+----
+service deluged stop
+service deluge_web stop
+pw user mod deluge -u {newUserID}
+pw group mod deluge -g {newGroupID}
+chown -R deluge:deluge /home/deluge
+chown deluge:deluge /var/tmp/deluge*.log
+service deluged start
+service deluge_web start
+----
+
+== Update user & group for Sonarr
+
+[source,shell]
+----
+service sonarr stop
+pw user mod sonarr -u {newUserID}
+pw group mod sonarr -g {newGroupID}
+chown -R sonarr:wheel /usr/local/sonarr
+----
+
+== Update user & group for Radarr
+
+[source,shell]
+----
+service radarr stop
+pw user mod radarr -u {newUserID}
+pw group mod radarr -g {newGroupID}
+chown -R radarr:wheel /usr/local/radarr
+chown -R radarr:radarr /usr/local/share/radarr
+chown -R radarr:radarr /var/run/radarr
+----
+
+== Update user & group for Emby
+
+
+----
+emby:*:989:989:Emby:/nonexistent:/usr/sbin/nologin <1>
+----
+<1> Result of the followind command `cat /etc/passwd`.
+
+[source,sh]
+----
+service emby-server stop
+pw user mod emby -u {newUserID}
+pw group mod emby -g {newGroupID}
+pw user mod emby -g 816
+chown -R emby:emby /var/db/emby-server
+chown -R emby:emby /var/run/emby-server.pid
+chown -R emby:wheel /tmp/.dotnet
+chown -R emby:wheel /tmp/clr-debug-pipe-80943-0-*
+----
+
+Then restart the jail.
