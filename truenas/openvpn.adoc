@@ -6,6 +6,7 @@
 * https://nordvpn.com/fr/servers/tools/[Tool to find the best NordVPN configuration]
 * https://nordvpn.com/fr/ovpn/[OpenVPN confiuration for NordVPN]
 * https://wtfismyip.com/[Test your IP]
+* https://nlamprian.me/blog/software/network/2022/01/15/deluge-on-truenas-core/[Another Guide]
 
 == Steps
 
